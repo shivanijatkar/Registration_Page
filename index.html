@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="Stylesheet" href="/style.css">
+    <!-- <script src="/index.js"></script> -->
+</head>
+<body>
+    <h2>Register yourself for the contest</h2>
+    <div class="container">
+        <p>Enter first name</p>
+        <input type="text" placeholder="firstname" id="fname">
+        <p>Enter last name</p>
+        <input type="text" placeholder="lastname" id="lname">
+        <p>Enter email</p>
+        <input type="email" placeholder="email_id" id="email">
+        <p>Enter contact number</p>
+        <input type="number" placeholder="contact_number" id="con">
+        <p>Enter password</p>
+        <input type="text" placeholder="password" id="pass">
+        <button id="click" onclick="openPopup()">Register</button>
+
+        <div class ="popup" id="popup">
+            <img src="/done-spongebob.gif" alt="">
+            <h2>Thank You!</h2>
+            <p>You have been registered successfully for the context. Details for the contest will be shared soon on your registered email.</p>
+            <!-- <p>Details for the context will be shared soon on your registered email.</p> -->
+            <br>
+            <br>
+            <p>All the very best :)</p>
+            <!-- <button type="button" onclick="closePopup()">Ok</button> -->
+        </div>
+    </div>
+    <script>
+        let fname = document.getElementById("fname");
+        let lname = document.getElementById("lname");
+        let email = document.getElementById("email");
+        let pass = document.getElementById("pass");
+        let con = document.getElementById("con");
+
+        let popup = document.getElementById("popup");
+
+        
+        function openPopup(){
+            if(pass.value.length > 0 && fname.value.length > 0 && lname.value.length > 0 && email.value.length > 0 && con.value.length > 0){
+                popup.classList.add("open-popup");
+            }else{
+                alert("Please fill the details completely.")
+            }
+        }
+        
+        function closePopup(){
+            // popup.classList.remove("open-popup");
+            alert("Close the window")
+        }
+
+    </script>
+</body>
+</html>
